@@ -58,16 +58,22 @@ Constraints:
  * @return {number}
  */
 var removeElement = function(nums, val) {
-
+    //looping through the length of the array.
+    //this is looping through the array one time.
+    //the problem I was faced with was that if two or more val is following each other, the second val will not be removed.
+    //I there for need to loop through the array again, how ever as we never kow how many val can be followed this need to be not a set number. 
     for (let i = 0; i < nums.length; i++) {
+        //by using a while loop I will loop through the array again and agan while nums[i] === val, resuling in multiples loops untill all val are removed
+        while (nums[i] === val) {
+            //removing all val in the array
+            if (nums[i] === val) {
+                //usinf splice to remove the val on said index place.
+            nums.splice(i, 1);
 
-        if (nums[i] === val) {
-        nums.splice(i, 1);
-        i--;// by decrementing i we check the last looped index in teh array again, meaning any repetitived val will also be removed. 
+            }
         }
-        
     }
-
+    //returning k.
     let k = nums.length;
     return k;
 };
